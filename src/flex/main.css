@@ -1,0 +1,51 @@
+
+/*.main {*/
+/*    width: 1200px;*/
+/*    height: 100%;*/
+/*    background-color: hotpink;*/
+/*}*/
+
+
+.flex-container {
+    display: flex;
+      width: 1200px;
+          height: 800px;
+          background-color: hotpink;
+    /*flex-wrap: nowrap;*/
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap*/
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /*align-content: center;*/
+/**/
+}
+
+.flex-element-size {
+    width: 60px;
+    height: 80px;
+    background-color: skyblue;
+    margin: 20px;
+}
+
+.order1 {
+
+}
+
+.order2 {
+    width: 200px;
+
+    align-self: flex-start;
+}
+.order3 {
+
+}
+.order4 {
+
+}
+.order5 {
+
+}
+.order6 {
+
+}
