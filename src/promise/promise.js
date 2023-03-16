@@ -1,4 +1,3 @@
-
 // fetch('https://libruary/autors', (err, data) => {
 //   if (err) {
 //     console.log(err);
@@ -97,7 +96,59 @@
 // delay(2000).then(() => console.log('Hello!'));
 
 
-
 // const promise = new Promise((resolve, reject) => resolve(200)).then(()=>{return 50}).then(()=>{}).then(()=>{return 300})
 //
 // console.log(promise.then())
+
+// new Promise((res, rej) => {
+//     res(10)
+// })
+//     .then((data) => {
+//         return new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(data + 1)
+//                 res(data + 1)
+//             }, 2000)
+//         })
+//     })
+//     .then((data) => {
+//         // return new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(data + 1)
+//                 // res(data + 1)
+//             }, 2000)
+//         // })
+//         return 50
+//     })
+
+
+
+ const  func =  async () => {
+    try {
+        const value1 = await new Promise((res, rej) => {
+            setTimeout(()=>{
+                console.log(2)
+                res(2)
+            },2000)
+        })
+        const value2 = await new Promise((res, rej) => {
+            setTimeout(()=>{
+                console.log(2 + value1)
+                res(2 + value1)
+            },2000)
+        })
+        const value3 = await new Promise((res, rej) => {
+            setTimeout(()=>{
+                console.log(2 + value2)
+                res(2 + value2)
+            },2000)
+        })
+        return value3
+    }
+    catch {
+        console.log("gggggggg")
+    }
+}
+
+console.log(func())
+
