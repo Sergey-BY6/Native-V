@@ -121,34 +121,134 @@
 //         return 50
 //     })
 
+//
+//
+//  const  func =  async () => {
+//     try {
+//         const value1 = await new Promise((res, rej) => {
+//             setTimeout(()=>{
+//                 console.log(2)
+//                 res(2)
+//             },2000)
+//         })
+//         const value2 = await new Promise((res, rej) => {
+//             setTimeout(()=>{
+//                 console.log(2 + value1)
+//                 res(2 + value1)
+//             },2000)
+//         })
+//         const value3 = await new Promise((res, rej) => {
+//             setTimeout(()=>{
+//                 console.log(2 + value2)
+//                 res(2 + value2)
+//             },2000)
+//         })
+//         return value3
+//     }
+//     catch {
+//         console.log("gggggggg")
+//     }
+// }
+//
+// console.log(func())
 
 
- const  func =  async () => {
-    try {
-        const value1 = await new Promise((res, rej) => {
-            setTimeout(()=>{
-                console.log(2)
-                res(2)
-            },2000)
-        })
-        const value2 = await new Promise((res, rej) => {
-            setTimeout(()=>{
-                console.log(2 + value1)
-                res(2 + value1)
-            },2000)
-        })
-        const value3 = await new Promise((res, rej) => {
-            setTimeout(()=>{
-                console.log(2 + value2)
-                res(2 + value2)
-            },2000)
-        })
-        return value3
-    }
-    catch {
-        console.log("gggggggg")
-    }
-}
+// new Promise((res, rej) => {
+//     res(1)
+// })
+//     .then((data) => {
+//         return new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(data + 1)
+//                 res(data + 1)
+//             }, 2000)
+//         })
+//     })
+//     .then((data) => {
+//         return new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(data + 1)
+//                 res(data + 1)
+//             }, 2000)
+//         })
+//     })
+//     .then((data) => {
+//         return new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(data + 1)
+//                 res(data + 1)
+//             }, 2000)
+//         })
+//     })
+//     .catch((err) => {
+//         console.log("Err")
+//     })
+//     .then((data) => {
+//         return new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log("final")
+//                 res(data + 1)
+//             }, 2000)
+//         })
+//     })
 
-console.log(func())
+//
+// Promise.all([
+//     new Promise((res, rej) => {
+//     setTimeout(() => {
+//         console.log("1")
+//         res( 1)
+//     }, 2000)
+// }), new Promise((res, rej) => {
+//     setTimeout(() => {
+//         console.log("2")
+//         res(2)
+//     }, 3000)
+// }),
+//     new Promise((res, rej) => {
+//         setTimeout(() => {
+//             console.log("3")
+//             res(3)
+//         }, 4000)
+//     })
+// ])
+//     .then((data) => {
+//         console.log(data)
+//     })
+
+
+//
+// const func = async () => {
+//         const value1 = await new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log("1")
+//                 res(1)
+//             }, 1000)
+//         })
+//
+//         const value2 = await new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(value1 + 1)
+//                 res(value1 + 1)
+//             }, 1000)
+//         })
+//
+//         const value3 = await new Promise((res, rej) => {
+//             setTimeout(() => {
+//                 console.log(value2 + 1)
+//                 res(value2 + 1)
+//             }, 1000)
+//         })
+//
+//     return value3
+// }
+//
+// console.log(func())
+//
+//
+//
+
+const promise1 = fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(data => data.json().then(data => data.id))
+    .then(console.log)
 
