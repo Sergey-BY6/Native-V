@@ -255,7 +255,7 @@ const loadVacancies2 = async () => {
         console.log(res)
         return res
     })
-    
+
     const getG = api1.getVacanciesCountFromGoogle()
         .then(res => {
         console.log(res)
